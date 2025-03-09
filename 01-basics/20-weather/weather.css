@@ -24,6 +24,15 @@
     margin-bottom: 25px;
 }
 
+.weather-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 16px #0000001f;
+  background-color: var(--white);
+}
+
 .weather-card__name {
   margin: 0;
 }
@@ -58,8 +67,9 @@
 .weather-alert {
     background-color: #fff2cc;
     padding: 10px;
-
     border-radius: 8px;
+    background-color: #fff2cc;
+    padding: 10px;
 }
 
 .weather-alert__icon {
