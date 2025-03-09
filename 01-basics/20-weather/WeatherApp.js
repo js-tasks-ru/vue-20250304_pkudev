@@ -1,32 +1,6 @@
 import { defineComponent } from 'vue'
 import { getWeatherData, WeatherConditionIcons } from './weather.service.ts'
-
-const calcTemp = (temp) => (+temp - 273.15).toFixed(1);
-
-const calcPressure = (pressure) => (+pressure * 0.75).toFixed(0);
-
-function createDateFromTime(time) {
-    if (!/^\d{2}:\d{2}$/.test(time)) {
-        console.error('Неправильный формат времени: ', time);
-        return null;
-    }
-
-    let [hours, minutes] = time.split(':').map(Number);
-    let date = new Date();
-
-    date.setHours(hours);
-    date.setMinutes(minutes);
-
-    return date;
-}
-
-function isNight(dt, sunrise, sunset) {
-    dt = createDateFromTime(dt);
-    sunrise = createDateFromTime(sunrise);
-    sunset = createDateFromTime(sunset);
-
-    return dt < sunrise || dt > sunset;
-}
+import { calcTemp, calcPressure, isNight } from "./weather.service.functions.js";
 
 export default defineComponent({
     name: 'WeatherApp',
