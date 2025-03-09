@@ -6,7 +6,7 @@ const getDateNowLong = () => {
             dateStyle: 'long'
         }
     );
-}
+};
 
 const app = createApp(
     defineComponent({
