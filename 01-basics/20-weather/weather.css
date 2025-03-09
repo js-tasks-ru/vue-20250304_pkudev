@@ -1,8 +1,27 @@
+.wrapper {
+    padding: 60px 0;
+}
+
 .weather-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
   max-width: 570px;
+}
+
+.weather-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--white);
+
+    border-radius: 12px;
+    box-shadow: 0 2px 16px #00000012;
+    padding: 20px;
+}
+
+.weather-card:not(:last-child) {
+    margin-bottom: 25px;
 }
 
 .weather-card {
@@ -46,8 +65,11 @@
 }
 
 .weather-alert {
-  background-color: #fff2cc;
-  padding: 10px;
+    background-color: #fff2cc;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fff2cc;
+    padding: 10px;
 }
 
 .weather-alert__icon {
