@@ -1,26 +1,41 @@
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
-  name: 'CounterApp',
+    name: 'CounterApp',
 
-  setup() {},
+    setup() {
+        const count = ref(0);
 
-  template: `
-    <div class="counter">
-      <button
-        class="button button--secondary"
-        type="button"
-        aria-label="Decrement"
-        disabled
-      >➖</button>
+        return {
+            count
+        }
+    },
 
-      <span class="count" data-testid="count">0</span>
+    template: `
+        <div class="counter">
+            <button
+                @click="count--"
+                class="button button--secondary"
+                type="button"
+                aria-label="Decrement"
+                :disabled="count <= 0"
+            >
+                ➖
+            </button>
 
-      <button
-        class="button button--secondary"
-        type="button"
-        aria-label="Increment"
-      >➕</button>
-    </div>
-  `,
-})
+            <span class="count" data-testid="count">
+                {{ count }}
+            </span>
+
+            <button
+                @click="count++"
+                class="button button--secondary"
+                type="button"
+                aria-label="Increment"
+                :disabled="count >= 5"
+            >
+                ➕
+            </button>
+        </div>
+    `,
+});
